@@ -28,7 +28,6 @@ async function fetchSkills() {
 
 onMounted(async () => {
   await fetchSkills()
-  // Inisialisasi Swiper SETELAH data berhasil diambil
   new Swiper('.skillsSwiper', {
     modules: [Navigation, Pagination],
     loop: true,
@@ -59,9 +58,9 @@ onMounted(async () => {
               </div>
               <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <div v-for="skill in category.skills" :key="skill.name" class="skill-card">
-                  <i :class="skill.iconClass" class="text-3xl mb-3"></i>
-                  <div>{{ skill.name }}</div>
-                </div>
+                <i :class="[skill.icon, `text-${skill.color}`]" class="text-3xl mb-3"></i>
+                <div>{{ skill.name }}</div>
+              </div>
               </div>
             </div>
           </div>
