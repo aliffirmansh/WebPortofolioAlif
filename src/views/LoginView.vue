@@ -18,16 +18,14 @@ async function handleLogin() {
       email: email.value,
       password: password.value,
     })
-
     if (error) throw error
-
-    // Jika login berhasil, arahkan ke halaman admin
     router.push('/admin')
-
-  } catch (error) {
+    } 
+    catch (error) {
     console.error('Error logging in:', error.message)
     errorMsg.value = `Gagal login: ${error.message}`
-  } finally {
+    } 
+    finally {
     loading.value = false
   }
 }

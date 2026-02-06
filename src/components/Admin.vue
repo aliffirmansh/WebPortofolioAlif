@@ -1,4 +1,3 @@
-<!-- src/components/Admin.vue -->
 <script setup>
 import { ref } from "vue";
 import ProjectManager from "./admin/ProjectManager.vue";
@@ -20,8 +19,6 @@ function changeSection(section) {
       <h1 class="text-3xl font-bold font-heading mb-6 gradient-text">
         Admin Panel
       </h1>
-
-      <!-- Navigasi Section -->
       <div class="mb-8 border-b border-gray-200">
         <nav class="-mb-px flex space-x-6">
           <button
@@ -40,15 +37,12 @@ function changeSection(section) {
         </nav>
       </div>
 
-      <!-- Tampilkan komponen manajer yang sesuai -->
       <ProjectManager v-if="currentSection === 'projects'" />
       <EducationManager v-if="currentSection === 'education'" />
       <CertificationManager v-if="currentSection === 'certifications'" />
       <SkillsManager v-if="currentSection === 'skills'" />
 
-      <!-- Placeholder untuk section lain -->
       <div v-if="currentSection === 'skills'">Skills Manager will go here.</div>
     </div>
   </div>
 </template>
-```
